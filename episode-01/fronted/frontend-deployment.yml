@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-episode-01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend-episode-01
+  template:
+    metadata:
+      labels:
+        app: frontend-episode-01
+    spec:
+      containers:
+      - name: frontend
+        image: rubabzahra/frontend-episode-01:latest
+        ports:
+        - containerPort: 80

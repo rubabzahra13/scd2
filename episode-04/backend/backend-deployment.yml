@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-episode-04
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-episode-04
+  template:
+    metadata:
+      labels:
+        app: backend-episode-04
+    spec:
+      containers:
+      - name: backend
+        image: rubabzahra/backend-episode-04:latest
+        ports:
+        - containerPort: 3000
